@@ -6,7 +6,7 @@ import classes from "./post-item.module.css";
 function PostItem(props) {
   const { title, image, excerpt, date, slug } = props.post;
 
-  const imagePath = `/images/posts/${image}`;
+  const imagePath = `/images/posts/${slug}/${image}`;
   const linkPath = `/posts/${slug}`;
 
   return (
