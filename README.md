@@ -10,6 +10,12 @@ Clone and run yarn install to install the dependencies.
 yarn install
 ```
 
+Add the necessary `env` variables:
+
+```
+MONGODB_URL={mongodb-url}
+```
+
 ## Start Locally
 
 Run the development server:

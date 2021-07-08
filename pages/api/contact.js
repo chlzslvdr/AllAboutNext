@@ -1,4 +1,7 @@
-function handler(req, res) {
+import _ from "lodash";
+import { MongoClient } from "mongodb";
+
+async function handler(req, res) {
   if (req.method === "POST") {
     const { email, name, message } = req.body;
 
@@ -20,7 +23,29 @@ function handler(req, res) {
       message,
     };
 
-    console.log(newMessage);
+    let client;
+
+    try {
+      client = await MongoClient.connect(process.env.MONGODB_URL, {
+        useUnifiedTopology: true,
+      });
+    } catch (error) {
+      res.status(500).json({ message: "Could not connect to a database." });
+      return;
+    }
+
+    const db = client.db();
+
+    try {
+      const result = db.collection("messages").insertOne(newMessage);
+      newMessage.id = (await result).insertedId;
+    } catch (error) {
+      client.close();
+      res.status(500).json({ message: "Storing message failed." });
+      return;
+    }
+
+    client.close();
 
     res
       .status(201)
