@@ -1,6 +1,6 @@
 # AllAboutNext
 
-This is a Demo Project made with [Next.js & React - The Complete Guide (incl. Two Paths!)](https://github.com/mschwarzmueller/nextjs-course-code).
+This is a [Demo Project](https://all-about-next-blog.vercel.app) made with [Next.js & React - The Complete Guide (incl. Two Paths!)](https://github.com/mschwarzmueller/nextjs-course-code).
 
 ## Installation
 
