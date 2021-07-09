@@ -13,7 +13,9 @@ yarn install
 Add the necessary `env` variables:
 
 ```
-MONGODB_URL={mongodb-url}
+MONGODB_USERNAME={mongodb_username}
+MONGODB_PASSWORD={mongodb_password}
+MONGODB_CLUSTER={mongodb_cluster}
 ```
 
 ## Start Locally
