@@ -8,7 +8,7 @@ export function getPostsFiles() {
   return fs.readdirSync(postsDirectory);
 }
 
-export function getPostData(postIdentifier) {
+export function getPostData(postIdentifier: any) {
   const postSlug = postIdentifier.replace(/\.md$/, "");
   const filePath = path.join(postsDirectory, `${postSlug}.md`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
@@ -26,11 +26,11 @@ export function getPostData(postIdentifier) {
 export function getAllPosts() {
   const postFiles = getPostsFiles();
 
-  const allPosts = postFiles.map((postFile) => {
+  const allPosts = postFiles.map((postFile: any) => {
     return getPostData(postFile);
   });
 
-  const sortedPosts = allPosts.sort((postA, postB) =>
+  const sortedPosts = allPosts.sort((postA: any, postB: any) =>
     postA.date > postB.date ? -1 : 1
   );
 
@@ -38,7 +38,7 @@ export function getAllPosts() {
 }
 export function getFeaturedPosts() {
   const allPosts = getAllPosts();
-  const featuredPosts = allPosts.filter((post) => post.isFeatured);
+  const featuredPosts = allPosts.filter((post: any) => post.isFeatured);
 
   return featuredPosts;
 }

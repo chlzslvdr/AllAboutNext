@@ -12,7 +12,9 @@ const ContactForm = () => {
   useEffect(() => {
     if (requestStatus === "success" || "error") {
       const timer = setTimeout(() => {
+        //@ts-ignore
         setRequestStatus(null);
+        //@ts-ignore
         setRequestError(null);
       }, 3000);
 
@@ -20,7 +22,7 @@ const ContactForm = () => {
     }
   }, [requestStatus]);
 
-  async function sendContactData(contactDetails) {
+  async function sendContactData(contactDetails: any) {
     const response = await fetch("/api/contact", {
       method: "POST",
       body: JSON.stringify(contactDetails),
@@ -36,9 +38,10 @@ const ContactForm = () => {
     }
   }
 
-  async function sendMessageHandler(event) {
+  async function sendMessageHandler(event: any) {
     event.preventDefault();
 
+    //@ts-ignore
     setRequestStatus("pending");
 
     try {
@@ -47,13 +50,17 @@ const ContactForm = () => {
         name: enteredName,
         message: enteredMessage,
       });
+      //@ts-ignore
       setRequestStatus("success");
 
       setEnteredEmail("");
       setEnteredName("");
       setEnteredMessage("");
     } catch (error) {
+      //@ts-ignore
       setRequestError(error.message);
+
+      //@ts-ignore
       setRequestStatus("error");
     }
   }
@@ -114,7 +121,7 @@ const ContactForm = () => {
           <label htmlFor="message">Your Message</label>
           <textarea
             id="message"
-            rows="5"
+            rows={5}
             required
             value={enteredMessage}
             onChange={(event) => setEnteredMessage(event.target.value)}

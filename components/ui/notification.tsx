@@ -4,7 +4,7 @@ import classes from "./notification.module.css";
 
 interface NotificationProps {
   title: string;
-  message: string;
+  message?: string;
   status: string;
 }
 
@@ -26,6 +26,7 @@ const Notification: FC<NotificationProps> = ({ title, message, status }) => {
       <h2>{title}</h2>
       <p>{message}</p>
     </div>,
+    //@ts-ignore
     document.getElementById("notifications")
   );
 };

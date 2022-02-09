@@ -23,6 +23,13 @@
       "@/styles/*": ["styles/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_document.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/_document.js",
+    "pages/_app.jsx",
+    "pages/api/contact.js"
+  ],
   "exclude": ["node_modules"]
 }

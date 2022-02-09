@@ -11,15 +11,15 @@ import classes from "./post-content.module.css";
 SyntaxHighlighter.registerLanguage("js", js);
 SyntaxHighlighter.registerLanguage("css", css);
 
-interface FeaturedPostsProps {
-  post: string;
+interface PostContentProps {
+  post: any;
 }
 
 const PostContent: FC<PostContentProps> = ({ post }) => {
   const imagePath = `/images/posts/${post.slug}/${post.image}`;
 
   const customRenderers = {
-    p(paragraph) {
+    p(paragraph: any) {
       const { node } = paragraph;
 
       if (node.children[0].tagName === "img") {
@@ -40,7 +40,7 @@ const PostContent: FC<PostContentProps> = ({ post }) => {
       return <p>{paragraph.children}</p>;
     },
 
-    code(code) {
+    code(code: any) {
       const { className, children } = code;
       const language = className.split("-")[1];
       return (

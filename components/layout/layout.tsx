@@ -1,3 +1,4 @@
+import { FC } from "react";
 import React, { Fragment } from "react";
 import MainNavigation from "./main-navigation";
 

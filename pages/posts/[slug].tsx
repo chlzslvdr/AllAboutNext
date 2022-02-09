@@ -20,7 +20,7 @@ const PostDetailPage: FC<PostDetailPageProps> = ({ post }) => {
   );
 };
 
-export function getStaticProps(context) {
+export function getStaticProps(context: any) {
   const { slug } = context.params;
 
   const postData = getPostData(slug);
