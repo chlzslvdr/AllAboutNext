@@ -1,9 +1,14 @@
+import { FC } from "react";
 import ReactDOM from "react-dom";
 import classes from "./notification.module.css";
 
-function Notification(props) {
-  const { title, message, status } = props;
+interface NotificationProps {
+  title: string;
+  message: string;
+  status: string;
+}
 
+const Notification: FC<NotificationProps> = ({ title, message, status }) => {
   let statusClasses = "";
 
   if (status === "success") {
@@ -23,6 +28,6 @@ function Notification(props) {
     </div>,
     document.getElementById("notifications")
   );
-}
+};
 
 export default Notification;

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import classes from "./main-navigation.module.css";
 import Logo from "./logo";
-function MainNavigation() {
+
+const MainNavigation = () => {
   return (
     <header className={classes.header}>
       <Link href="/" passHref>
@@ -21,6 +22,6 @@ function MainNavigation() {
       </nav>
     </header>
   );
-}
+};
 
 export default MainNavigation;

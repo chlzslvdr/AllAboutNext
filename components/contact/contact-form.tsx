@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Notification from "../ui/notification";
 import classes from "./contact-form.module.css";
 
-function ContactForm() {
+const ContactForm = () => {
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredName, setEnteredName] = useState("");
   const [enteredMessage, setEnteredMessage] = useState("");
@@ -134,6 +134,6 @@ function ContactForm() {
       )}
     </section>
   );
-}
+};
 
 export default ContactForm;

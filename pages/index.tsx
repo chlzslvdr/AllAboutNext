@@ -1,10 +1,14 @@
 import { Fragment } from "react";
 import Head from "next/head";
-import Hero from "../components/home-page/hero";
-import FeaturedPosts from "../components/home-page/featured-posts";
-import { getFeaturedPosts } from "../lib/posts-util";
+import Hero from "@/components/home-page/hero";
+import FeaturedPosts from "@/components/home-page/featured-posts";
+import { getFeaturedPosts } from "@/lib/posts-util";
 
-function HomePage(props) {
+interface HomePageProps {
+  posts: any;
+}
+
+const HomePage: FC<HomePageProps> = ({ posts }) => {
   return (
     <Fragment>
       <Head>
@@ -15,10 +19,10 @@ function HomePage(props) {
         />
       </Head>
       <Hero />
-      <FeaturedPosts posts={props.posts} />
+      <FeaturedPosts posts={posts} />
     </Fragment>
   );
-}
+};
 
 export function getStaticProps() {
   const featuredPosts = getFeaturedPosts();

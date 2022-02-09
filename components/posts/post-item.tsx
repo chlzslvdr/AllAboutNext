@@ -1,10 +1,15 @@
+import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import getFormattedDate from "../../common/methods/getFormattedDate";
+import getFormattedDate from "@/common/methods/getFormattedDate";
 import classes from "./post-item.module.css";
 
-function PostItem(props) {
-  const { title, image, excerpt, date, slug } = props.post;
+interface PostItemProps {
+  post: any;
+}
+
+const PostItem: FC<PostItemProps> = ({ post }) => {
+  const { title, image, excerpt, date, slug } = post;
 
   const imagePath = `/images/posts/${slug}/${image}`;
   const linkPath = `/posts/${slug}`;
@@ -31,6 +36,6 @@ function PostItem(props) {
       </Link>
     </li>
   );
-}
+};
 
 export default PostItem;

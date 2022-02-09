@@ -1,13 +1,18 @@
+import { FC } from "react";
 import PostsGrid from "./posts-grid";
 import classes from "./all-posts.module.css";
 
-function AllPosts(props) {
+interface AllPostsProps {
+  posts: string;
+}
+
+const AllPosts: FC<AllPostsProps> = ({ posts }) => {
   return (
     <section className={classes.posts}>
       <h1>All Posts</h1>
-      <PostsGrid posts={props.posts} />
+      <PostsGrid posts={posts} />
     </section>
   );
-}
+};
 
 export default AllPosts;

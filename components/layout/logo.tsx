@@ -1,7 +1,7 @@
 import classes from "./logo.module.css";
 
-function Logo() {
+const Logo = () => {
   return <div className={classes.logo}>AllAboutNext</div>;
-}
+};
 
 export default Logo;
