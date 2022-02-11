@@ -15,6 +15,7 @@ const HomePage: FC<HomePageProps> = ({ posts }) => {
         title="AllAboutNext"
         description="I blog about demigod childrens of greek gods and goddesses."
       />
+      <Hero />
       <FeaturedPosts posts={posts} />
     </Fragment>
   );
