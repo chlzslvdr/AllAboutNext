@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Head from "next/head";
+import SEO from "@/components/seo/index";
 import { Fragment } from "react";
 import PostContent from "@/components/posts/post-detail/post-content";
 import { getPostsFiles, getPostData } from "@/lib/posts-util";
@@ -11,10 +11,7 @@ interface PostDetailPageProps {
 const PostDetailPage: FC<PostDetailPageProps> = ({ post }) => {
   return (
     <Fragment>
-      <Head>
-        <title>{post.title}</title>
-        <meta name="description" content={post.excerpt} />
-      </Head>
+      <SEO title={post.title} description={post.excerpt} />
       <PostContent post={post} />
     </Fragment>
   );

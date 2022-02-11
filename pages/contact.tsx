@@ -1,14 +1,11 @@
 import { Fragment } from "react";
-import Head from "next/head";
+import SEO from "@/components/seo/index";
 import ContactForm from "@/components/contact/contact-form";
 
 const ContactPage = () => {
   return (
     <Fragment>
-      <Head>
-        <title>Contact Me</title>
-        <meta name="description" content="Send me your messages!" />
-      </Head>
+      <SEO title="Contact Me" description="Send me your messages!" />
       <ContactForm />
     </Fragment>
   );

@@ -1,6 +1,5 @@
-import { FC } from "react";
-import Head from "next/head";
-import { Fragment } from "react";
+import { FC, Fragment } from "react";
+import SEO from "@/components/seo/index";
 import AllPosts from "@/components/posts/all-posts";
 import { getAllPosts } from "@/lib/posts-util";
 
@@ -11,13 +10,11 @@ interface AllPostsPageProps {
 const AllPostsPage: FC<AllPostsPageProps> = ({ posts }) => {
   return (
     <Fragment>
-      <Head>
-        <title>All Posts</title>
-        <meta
-          name="description"
-          content="A list of all programming-related tutorials and posts!"
-        />
-      </Head>
+      <SEO
+        title={post.title}
+        description="A list of all programming-related tutorials and posts!"
+      />
+
       <AllPosts posts={posts} />
     </Fragment>
   );

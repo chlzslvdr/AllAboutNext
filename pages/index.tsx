@@ -1,5 +1,5 @@
 import { FC, Fragment } from "react";
-import Head from "next/head";
+import SEO from "@/components/seo/index";
 import Hero from "@/components/home-page/hero";
 import FeaturedPosts from "@/components/home-page/featured-posts";
 import { getFeaturedPosts } from "@/lib/posts-util";
@@ -11,14 +11,10 @@ interface HomePageProps {
 const HomePage: FC<HomePageProps> = ({ posts }) => {
   return (
     <Fragment>
-      <Head>
-        <title>AllAboutNext</title>
-        <meta
-          name="description"
-          content="I blog about demigod childrens of greek gods and goddesses."
-        />
-      </Head>
-      <Hero />
+      <SEO
+        title="AllAboutNext"
+        description="I blog about demigod childrens of greek gods and goddesses."
+      />
       <FeaturedPosts posts={posts} />
     </Fragment>
   );
