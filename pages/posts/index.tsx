@@ -11,7 +11,7 @@ const AllPostsPage: FC<AllPostsPageProps> = ({ posts }) => {
   return (
     <Fragment>
       <SEO
-        title={post.title}
+        title="All Posts"
         description="A list of all programming-related tutorials and posts!"
       />
 
